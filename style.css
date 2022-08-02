@@ -1,0 +1,258 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    background: #f7cd75;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    position: relative;
+    margin: 0 0 40px;
+    margin-bottom: 35px;
+    font-weight: 300;
+    font-size: 1.25rem;
+}
+
+hr {
+    margin: 42px 0;
+    height: 1px;
+    border: none;
+    background: #dedede;
+}
+
+.cf::before, .cf::after {
+    content: '';
+    display: table;
+}
+
+.cf::after {
+    clear: both;
+}
+
+.wrapper {
+    width: 800px;
+    margin: 100px auto;
+    box-shadow: 0 15px 20px -8px rgba(0,0,0,0.1);
+}
+
+.wallets-box {
+    float: left;
+    width: 300px;
+    height: 450px;
+    padding: 45px 40px;
+    overflow: auto;
+    background: #f2f2f2;
+}
+
+.add-wallet-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.plus-icon {
+    width: 20px;
+}
+
+.wallets-list-item {
+    display: block;
+    padding: 65px 10px 10px;
+    border: 1px solid #dedede;
+    margin: 0 0 28px;
+    border-radius: 4px;
+    background: #fff no-repeat 10px 10px;
+    background-size: 60px 40px;
+    color: #727272;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.wallets-list-item:last-child {
+    margin: 0;
+}
+
+.wallets-list-item:hover, .wallets-list-item.active {
+    box-shadow: 0 0 0 2px #8793c6;
+}
+
+.wallets-list-item.visa {
+    background-image: url("img/294654_visa_icon.svg");
+}
+
+.wallets-list-item.mastercard {
+    background-image: url("img/1156750_finance_mastercard_payment_icon.svg");
+}
+
+.wallets-list-item.maestro {
+    background-image: url("img/1156735_finance_logo_maestro_payment_icon.svg");
+}
+
+.card-number {
+    margin: 0 0 5px;
+}
+
+.card-expiry-date {
+    font-size: 0.8rem;
+}
+
+.wallet-details-box {
+    width: 500px;
+    height: 450px;
+    overflow: auto;
+    padding: 45px 40px;
+    float: left;
+    background: #fff;
+}
+
+.current-balance-amount {
+    position: absolute;
+    right: 0;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.transaction-list {
+    padding: 0;
+    margin: 0;
+}
+
+.transaction-item {
+    position: relative;
+    padding: 0 0 0 50px;
+    margin: 0 0 40px;
+    list-style-type: none;
+}
+
+.transaction-item:last-child {
+    margin: 0;
+}
+
+.transaction-item::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #dedede;
+    margin-top: -10px;
+    border-radius: 50%;
+    background: no-repeat center;
+    background-size: 12px;
+}
+
+.transaction-item::before {
+    background-image: url("img/4115236_delete_min_minus_icon.svg");
+}
+
+.transaction-item--income::before {
+    background-image: url("img/211602_plus_empty_icon.svg");
+}
+
+.transaction-item-name {
+    margin: 0 0 5px;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.transaction-item-details {
+    color: #b5b5b5;
+    font-size: 0.9rem;
+}
+
+.transaction-item-amount {
+    position: absolute;
+    right: 0; top: 50%;
+    font-weight: bold;
+    transform: translateY(-50%);
+}
+
+.transaction-item--expense .transaction-item-amount {
+    color: #8797c6;
+}
+
+.transaction-item--income .transaction-item-amount {
+    color: #8ace5e;
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
+    .wrapper {
+        width: 95%;
+        margin: 30px auto;
+    }
+
+    .wallets-box {
+        width: 35%;
+        padding: 35px 30px;
+    }
+
+    .wallet-details-box {
+        width: 65%;
+        padding: 35px 30px;
+    }
+    
+    .transactions-list {
+        padding-left: 10px;
+    }
+
+    .transaction-item-details {
+        width: 82%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    h2 {
+        margin: 0 0 25px;
+    }
+
+    hr {
+        margin: 30px 0;
+    }
+
+    .wallets-box, .wallet-details-box {
+        padding: 30px 25px;
+    }
+
+    .wallets-list-item {
+        padding: 45px 10px 10px;
+        margin: 0 0 20px;
+        background-position: 5px 5px;
+    }
+
+    .card-number {
+        font-size: 0.9rem;
+    }
+
+    .current-balance-amount {
+        font-size: 1.3rem;
+    }
+    
+    .transaction-item {
+        padding: 0 0 0 35px;
+        margin: 0 0 25px;
+    }
+    
+    .transactions-list {
+        padding-left: 0;
+    }
+
+    .transaction-item-details {
+        width: 75%;
+        line-height: 1.2;
+    }
+}
